@@ -1,0 +1,19 @@
+{
+  "name": "spike-sonar-cloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/STHEPHEN3S/spike-sonar-cloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/STHEPHEN3S/spike-sonar-cloud/issues"
+  },
+  "homepage": "https://github.com/STHEPHEN3S/spike-sonar-cloud#readme"
+}
