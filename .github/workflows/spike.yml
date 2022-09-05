@@ -3,7 +3,7 @@ name: spike-sonar-cloud
 on:
   push:
     branches:
-      - develop
+      - qa
 
 env:
   project_name: 'spike-sonar-cloud'
