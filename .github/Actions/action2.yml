@@ -1,0 +1,17 @@
+name: spike-sonar-cloud-action2
+ 
+# on:
+#   push:
+#     branches:
+#       - develop
+
+env:
+  project_name: 'spike-sonar-cloud'
+
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        run: |
+          echo hola action uses ---------------------------------------------------------------------
