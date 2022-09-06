@@ -22,7 +22,9 @@ jobs:
       - name: Create Actions and download gist
         run: |
           pwd
+          ls
           mkdir .github/workflows/Actions
           curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  .github/workflows/Actions/action.yml
+          ls .github/workflows/Actions
       - name: Use action.yml
         uses: ./.github/Actions/action
