@@ -27,4 +27,4 @@ jobs:
           curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  .github/workflows/Actions/action.yml
           ls .github/workflows/Actions
       - name: Use action.yml
-        uses: ./.github//actions/deploy
+        uses: ./.github//actions/local
