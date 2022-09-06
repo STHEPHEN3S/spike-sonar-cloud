@@ -1,17 +1,11 @@
-name: spike-sonar-cloud-action2
- 
-# on:
-#   push:
-#     branches:
-#       - develop
+name: Test
+description: 'composite run action'
 
-env:
-  project_name: 'spike-sonar-cloud'
-
-jobs:
-  sonar:
-    runs-on: ubuntu-latest
+runs:
+  using: "composite"
+  steps: 
     steps:
-      - name: Checkout
-        run: |
-          echo hola action uses ---------------------------------------------------------------------
+    - name: Echo
+      shell: bash
+      run: |
+        echo Hello world gist
