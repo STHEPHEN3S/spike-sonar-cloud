@@ -23,8 +23,8 @@ jobs:
         run: |
           pwd
           ls
-          mkdir .github/workflows/Actions
-          curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  .github/workflows/Actions/action.yml
+          mkdir .github/gist
+          curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  .github/gist/action.yml
           ls .github/workflows/Actions
 
       - name: Get composite run steps repository
@@ -38,4 +38,6 @@ jobs:
 
       - name: Run action from private repo
         uses: ./.github/myaction
+      - name: Run action from private repo 2
+        uses: ./.github/myaction/other-local
 
