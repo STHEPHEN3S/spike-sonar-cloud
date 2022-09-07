@@ -28,3 +28,16 @@ jobs:
           ls .github/workflows/Actions
       - name: Use action.yml
         uses: STHEPHEN3S/envrinments-spike@main
+      - name: donwdload action
+      - name: Get composite run steps repository
+        uses: actions/checkout@v2
+        with:
+          repository: STHEPHEN3S/envrinments-spike
+          # Personal access token to check out private repository
+          token: ${{ secrets.ACCESTOKEN }}
+          # Indicate where to check action out to
+          path: .github/myaction
+
+      - name: Run action from private repo
+        uses: ./.github/myaction
+
