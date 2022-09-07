@@ -28,7 +28,6 @@ jobs:
           ls .github/workflows/Actions
       - name: Use action.yml
         uses: STHEPHEN3S/envrinments-spike@main
-      - name: donwdload action
       - name: Get composite run steps repository
         uses: actions/checkout@v2
         with:
