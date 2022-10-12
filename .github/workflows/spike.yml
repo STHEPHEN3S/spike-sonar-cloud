@@ -26,6 +26,7 @@ jobs:
           mkdir .github/gist
           curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  .github/gist/action.yml
           ls .github/
+          python --version
 
       - name: Get composite run steps repository
         uses: actions/checkout@v2
