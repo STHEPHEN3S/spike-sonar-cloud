@@ -34,8 +34,8 @@ jobs:
         run: echo resultado
       - name: Imprimir miresultado
         run: echo {{ steps.miresultado.result}}
-      - name:
-        run: echo {{toJson(github)}}
+      - name: impriir github
+        run: echo ${{toJson(github)}}
 
       - name: Get composite run steps repository
         uses: actions/checkout@v2
