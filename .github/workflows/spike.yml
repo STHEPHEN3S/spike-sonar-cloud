@@ -14,11 +14,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-#       - name: SonarCloud Scan
-#         uses: sonarsource/sonarcloud-github-action@master
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       - name: Change version of python
         uses: actions/setup-python@v4
         with:
@@ -33,6 +29,11 @@ jobs:
           curl https://gist.githubusercontent.com/JohanWilliamSanchez/32faa6691a280e72de6a92d12803699b/raw/ >  .github/gist/action.yml
           ls .github/
           python --version
+      - name: Lo que sea
+        id: miresultado
+        run: echo resultado
+      - name: Imprimir miresultado
+        run: echo {{ steps.miresultado.result}}
 
       - name: Get composite run steps repository
         uses: actions/checkout@v2
