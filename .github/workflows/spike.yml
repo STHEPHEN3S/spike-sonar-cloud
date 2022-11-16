@@ -2,7 +2,7 @@ name: Staging Cron Job
 
 on:
   schedule:
-    - cron: "0 21 * * *"
+    - cron: "30 20 * * *"
 jobs:
   cron:
     runs-on: ubuntu-latest
