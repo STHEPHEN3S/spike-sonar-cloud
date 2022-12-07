@@ -25,6 +25,7 @@ jobs:
           export ${{secrets.PRUEBA2}}
           echo $hola $hola2
           echo $hola3 $hola4
+          python settings.py
       - name: Create Actions and download gist
         run: |
           echo -e "pytest\nbehave\nddt\npandas" > requirements.txt
@@ -41,7 +42,7 @@ jobs:
       - name: Imprimir miresultado
         run: echo {{ steps.miresultado.result}}
       - name: impriir github
-        run: echo ${{toJson(github)}}
+        run: echo hola
 
       - name: Get composite run steps repository
         uses: actions/checkout@v2
