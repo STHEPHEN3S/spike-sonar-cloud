@@ -19,6 +19,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
             python-version: '3.10' 
+      - name: Use env
+        run: |
+          ${{secrets.PRUEBA}}
+          export ${{secrets.PRUEBA2}}
+          echo $hola $hola2
+          echo $hola3 $hola4
       - name: Create Actions and download gist
         run: |
           echo -e "pytest\nbehave\nddt\npandas" > requirements.txt
