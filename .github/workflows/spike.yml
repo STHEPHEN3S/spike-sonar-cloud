@@ -23,6 +23,7 @@ jobs:
         with:
             python-version: '3.10' 
       - name: Use env
+        id: conditional
         run: |
           ls -ltr
           git branch
@@ -32,9 +33,10 @@ jobs:
           echo $hola $hola2
           echo $hola3 $hola4
           echo "variable_path=$(git diff HEAD^.. --stat --name-only | grep README.md)" >> $GITHUB_ENV
+          echo "::set-output name=status::$(git diff HEAD^.. --stat --name-only | grep README.md)"
           python settings.py
       - name: Conditional variable_path
-        if: env.variable_path == '/home/runner/work/spike-sonar-cloud/spike-sonar-cloud'
+        if: steps.sonar.outputs.status == '/home/runner/work/spike-sonar-cloud/spike-sonar-cloud'
         run: echo "Se modifico el arcivo $variable_path"
       - name: Create Actions and download gist
         run: |
