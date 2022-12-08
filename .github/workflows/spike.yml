@@ -36,7 +36,7 @@ jobs:
           echo "::set-output name=status::$(git diff HEAD^.. --stat --name-only | grep README.md)"
           python settings.py
       - name: Conditional variable_path
-        if: steps.sonar.outputs.status == '/home/runner/work/spike-sonar-cloud/spike-sonar-cloud'
+        if: steps.sonar.outputs.status != ''
         run: echo "Se modifico el arcivo $variable_path"
       - name: Create Actions and download gist
         run: |
