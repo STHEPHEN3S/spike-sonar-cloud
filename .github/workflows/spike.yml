@@ -31,10 +31,12 @@ jobs:
           export ${{secrets.PRUEBA2}}
           echo $hola $hola2
           echo $hola3 $hola4
+          echo "variable_path=$(pwd)" >> $GITHUB_ENV
           python settings.py
       - name: Create Actions and download gist
         run: |
           echo -e "pytest\nbehave\nddt\npandas" > requirements.txt
+          echo "variable_path: $variable_path"
           pip install -r requirements.txt
           pwd
           ls
