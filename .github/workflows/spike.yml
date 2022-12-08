@@ -31,8 +31,11 @@ jobs:
           export ${{secrets.PRUEBA2}}
           echo $hola $hola2
           echo $hola3 $hola4
-          echo "variable_path=$(pwd)" >> $GITHUB_ENV
+          echo "variable_path=$(git diff HEAD^.. --stat --name-only | grep README.md)" >> $GITHUB_ENV
           python settings.py
+      - name: Conditional variable_path
+        if: $variable_path != ""
+        run: echo "Se modifico el arcivo $variable_path"
       - name: Create Actions and download gist
         run: |
           echo -e "pytest\nbehave\nddt\npandas" > requirements.txt
@@ -57,9 +60,9 @@ jobs:
         with:
           repository: STHEPHEN3S/envrinments-spike
           # Personal access token to check out private repository
-          token: ${{ secrets.ACCESTOKEN }}
+          # token: ${{ secrets.ACCESTOKEN }}
           # Indicate where to check action out to
-          path: .github/myaction
+          # path: .github/myaction
 
       - name: Run action from private repo
         uses: ./.github/myaction
