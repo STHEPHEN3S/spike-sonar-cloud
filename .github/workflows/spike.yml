@@ -22,7 +22,7 @@ jobs:
       - name: Use env
         run: |
           ls -ltr
-          git diff HEAD^.. --stat --name-only
+          git diff HEAD^1 --stat --name-only
           ${{secrets.PRUEBA}}
           export ${{secrets.PRUEBA2}}
           echo $hola $hola2
