@@ -25,6 +25,8 @@ jobs:
       - name: Use env
         id: conditional
         run: |
+          echo "branch=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+          echo "rama : ${{ steps.conditional.outputs.branch }}"
           ls -ltr
           git branch
           git diff HEAD^.. --stat --name-only
