@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "branch=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
           export branch1=${GITHUB_REF##*/}
-          exho "Prueba rara ${{ secrets.hola_${GITHUB_REF##*/} }}"
+          exho "Prueba rara ${{ secrets.hola_${{GITHUB_REF##*/}} }}"
           echo "branch= $branch1"
           echo "rama : $branch1"
           ls -ltr
